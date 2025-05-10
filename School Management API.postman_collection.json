@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "01a591ed-131d-4ab2-8fdf-9c32dc950fc5",
+		"name": "School Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32091202"
+	},
+	"item": [
+		{
+			"name": "Create School",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Radient Public School\",\r\n    \"address\": \"201 South Block Road, Delhi\",\r\n    \"latitude\": 40.1010,\r\n    \"longitude\": 100.89\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/schools",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"schools"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get School by latitude & longitude",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Radient Public School\",\r\n    \"address\": \"201 South Block Road, Delhi\",\r\n    \"latitude\": 40.1010,\r\n    \"longitude\": 100.89\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}api/schools?latitude=40&longitude=100",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"schools"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40"
+						},
+						{
+							"key": "longitude",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://school-management-api-cyan.vercel.app/",
+			"type": "string"
+		}
+	]
+}
